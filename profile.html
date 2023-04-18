@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - My School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="profile.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/images/logo.png" alt="Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#message">Message Us</a></li>
+          <li><a href="#achievement">Achievement</a></li>
+          <li><a href="profile.html">Our Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+    <br>  <br>
+    <center>
+      <h1>Our Profile</h1>
+    </center>
+
+    <main>
+      <section class="about-us">
+        <h2>About Us</h2>
+        <p>
+          Welcome to our online course platform that offers physical teaching! 
+          Our team of experienced educators is dedicated to helping you achieve your learning goals. We believe that learning should be engaging, interactive, and personalized. That's why we offer a wide range of courses that are designed to meet the needs of learners at all levels, from beginner to advanced.
+          Our physical teaching approach allows you to learn in a comfortable and supportive environment, where you can interact with your instructors and classmates in person. You'll benefit from hands-on instruction, individual attention, and the opportunity to ask questions and receive feedback in real-time.
+          At our online course platform, we understand that your time is valuable, and that's why we've designed our courses to be flexible and convenient. You can study at your own pace, on your own schedule, and from anywhere in the world. Our courses are accessible from any device with an internet connection, so you can learn on-the-go, or from the comfort of your own home.
+        </p>
+      </section>
+
+      <section class="vision">
+        <h2>Vision</h2>
+        <p>
+          Our vision is to be a world-class educational institution that
+          prepares students for success in a rapidly changing global society. To empower individuals with the knowledge and skills they need to achieve their full potential and make a positive impact in their communities through accessible and high-quality education.To empower individuals with the knowledge and skills they need to achieve their full potential and make a positive impact in their communities through accessible and high-quality education.
+        </p>
+      </section>
+
+      <section class="mission">
+        <h2>Mission</h2>
+        <p>
+          Our mission is to provide exceptional educational experiences that inspire and transform our students. We strive to create a supportive and inclusive learning environment that fosters intellectual curiosity, critical thinking, and practical skills development. We are committed to delivering innovative and effective teaching methods that meet the needs of all learners, while also nurturing a sense of community and social responsibility. Our ultimate goal is to equip our students with the tools and confidence they need to pursue their dreams and create meaningful change in the world.
+        </p>
+      </section>
+    </main>
+    <br> <br>
+    <footer>
+      <p>Created by <span id="created-by"></span></p>
+    </footer>
+    <script>
+      const nama = sessionStorage.getItem("nama");
+      document.getElementById("created-by").innerHTML = nama;
+    </script>
+  </body>
+</html>

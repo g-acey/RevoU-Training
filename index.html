@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#message">Message Us</a></li>
+          <li><a href="#achievement">Achievement</a></li>
+          <li><a href="profile.html">Our Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="header">
+      <div class="header-text"> 
+        <h1>Hello! <span id="nama"></span>, Welcome to our website</h1>
+        <br/>
+        <p>Ini adalah website latihan pertama</p>
+        <br/>
+      </div>
+    </section>
+    <section id="top-banner">
+      <img src="images/course.jpg" alt="Course">
+      <script>
+        var name = prompt("Masukkan nama anda:");
+        document.getElementById("nama").innerText = name;
+      </script>
+    </section>
+
+    <br>
+    <div id="facillitation-box">
+      <div id="facillitation-box-title">
+        <h1>Our Facilitation</h1>
+      </div>
+      <div id="facillitation-images">
+        <div class="facillitation-item">
+          <img src="images/professional_teacher.jpeg" class="facillitation-image" />
+          <p class="facillitation-caption">Professional Teacher</p>
+        </div>
+        <div class="facillitation-item">
+          <img src="images/sport_field.jpeg" class="facillitation-image" />
+          <p class="facillitation-caption">Sport Field</p>
+        </div>
+        <div class="facillitation-item">
+          <img src="images/classroom.jpg" class="facillitation-image" />
+          <p class="facillitation-caption">Classroom</p>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="column" id="message-us-box">
+        <form name="message-us-form" onsubmit="return validateForm(event)">
+          <div id="message-us-form-title">
+            <h1>Message Us</h1>
+          </div>
+          Nama: <input placeholder="Nama" type="text" name="name">
+
+          Tanggal Lahir: <input type="date" name="birthdate">
+
+          Jenis Kelamin:<br><br>
+
+          <label for="male">
+          <input class="radio" type="radio" id="male" name="gender" value="Laki-laki">
+          Laki-laki
+          </label>
+          <label for="female">
+          <input class="radio" type="radio" id="female" name="gender" value="Perempuan">
+          Perempuan
+          </label>
+
+          <br><br><br>
+          Pesan:
+          <textarea placeholder="Pesan" name="message"></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+      <div class="column" id="form-output-box">
+        <div id="form-output-box-text">
+          <b
+            ><p>Current Time: <span id="current-time"></span></p
+          ></b>
+          <br />
+          <p>Nama: <span id="sender-name"></span></p>
+          <p>Tanggal Lahir: <span id="sender-birthdate"></span></p>
+          <p>Jenis Kelamin: <span id="sender-gender"></span></p>
+          <p>Pesan: <span id="sender-message"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function validateForm(event) {
+        event.preventDefault();
+        var name = document.forms["message-us-form"]["name"].value;
+        var birthdate = document.forms["message-us-form"]["birthdate"].value;
+        var gender = document.forms["message-us-form"]["gender"].value;
+        var message = document.forms["message-us-form"]["message"].value;
+
+        if (name == "") {
+          alert("Nama tidak boleh kosong");
+          return false;
+        }
+
+        if (birthdate == "") {
+          alert("Tanggal lahir tidak boleh kosong");
+          return false;
+        }
+
+        if (gender == null) {
+          alert("Pilih jenis kelamin");
+          return false;
+        }
+
+        if (message == "") {
+          alert("Pesan tidak boleh kosong");
+          return false;
+        }
+
+        setSenderUI(name, birthdate, gender, message);
+
+        return false;
+      }
+
+      function setSenderUI(name, birthdate, gender, message) {
+        document.getElementById("sender-name").innerText = name;
+        document.getElementById("sender-birthdate").innerText = birthdate;
+        document.getElementById("sender-gender").innerText = gender;
+        document.getElementById("sender-message").innerText = message;
+      }
+
+      function getCurrentTime() {
+        var now = new Date();
+        var day = now.getDate();
+        var month = now.getMonth() + 1;
+        var year = now.getFullYear();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        return (
+          day +
+          "/" +
+          month +
+          "/" +
+          year +
+          " " +
+          hours +
+          ":" +
+          minutes +
+          ":" +
+          seconds
+        );
+      }
+
+      var currentTimeElement = document.getElementById("current-time");
+      if (currentTimeElement) {
+        currentTimeElement.textContent = getCurrentTime();
+      }
+    </script>
+      <footer>
+        <p>Created by <span id="created-by"></span></p>
+      </footer>
+      <script>
+        var name = document.getElementById("nama").innerText;
+        document.getElementById("created-by").innerText = name;
+    
+        // Untuk menyimpan nilai nama di session storage
+        sessionStorage.setItem('nama', name);
+      </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+/* Reset some default styles */
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #f0f0f0;
+}
+/* Header styles */
+header {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  margin-left: 10px;
+  height: 40px;
+  margin-right: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-right: 30px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav ul li a:active {
+  background: green;
+  height: 100%;
+}
+
+/* Header Text styles */
+#header {
+  background-color: #f0f0f0;
+  padding: 30px 0;
+  text-align: left;
+}
+
+.header-text h1 {
+  font-size: 36px;
+  color: #000;
+  margin-left: 40px;
+  margin-bottom: 5px;
+  margin-top: 40px;
+}
+
+.header-text p {
+  margin-left: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+#created-by {
+  font-weight: bold;
+}
+
+.about-us, .vision, .mission {
+  margin: 30px auto;
+  max-width: 600px;
+  text-align: justify;
+}
+
+.about-us h2, .vision h2, .mission h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-us p, .vision p, .mission p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Mengatur tampilan footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: right;
+  padding: 10px;
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+.logo img {
+  margin-right: 5px;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+.header-text h1 {
+  font-size: 24px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.header-text p {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.about-us, .vision, .mission {
+  margin: 20px auto;
+}
+
+.about-us h2, .vision h2, .mission h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.about-us p, .vision p, .mission p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+footer {
+  padding: 5px;
+}
+}
